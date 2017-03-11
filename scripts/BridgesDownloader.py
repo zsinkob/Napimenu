@@ -2,7 +2,7 @@ import facebook
 import urllib.request
 import subprocess
 
-access_token = '582813855245984|_Rssln5VgoP05inf_FgincK4iy4'
+access_token = ''
 user = '1055195294541029'
 outfile = "/var/www/html/ebedmenu/bridges.jpg"
 
