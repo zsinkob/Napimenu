@@ -1,7 +1,11 @@
 #!/bin/bash
 
-convert bridges.jpg -sharpen 10 bridges.tif
-$(tesseract "bridges.tif" "bridges.txt" -l hun hocr)
+inputfile=$1
+outfolder="/var/www/html/ebedmenu/" 
+echo "${inputfile}"
+
+convert ${inputfile} -sharpen 10 "${outfolder}bridges.tif"
+$(tesseract "${outfolder}bridges.tif" "${outfolder}bridges.txt" -l hun hocr)
 
 function getDailyMenu {
 
@@ -11,7 +15,7 @@ index=$3
 date=$(date -d "+${index} days" +%Y-%m-%d)
 if [[ -z $current ]]; then
 	echo "cannot find ${current} offset ${3}"
-	cp bridges.jpg bridges_$date.jpg
+	cp ${inputfile} "${outfolder}bridges_$date.jpg"
  else
 
 x1="$(cut -d' ' -f2 <<< "$current")"
@@ -35,16 +39,16 @@ else
 fi
 
 echo "${width}x${height}+${cropx}+${cropy}"
-convert bridges.tif -crop "${width}x${height}+${cropx}+${cropy}" "bridges_$date.jpg"
+convert "${outfolder}bridges.tif" -crop "${width}x${height}+${cropx}+${cropy}" "${outfolder}bridges_$date.jpg"
 fi
 
 }
 
-hetfo=$(grep -i 'H[ée]tf[oőö]' bridges.txt.hocr | egrep -o "bbox.*; baseline" | egrep -o "[0-9 ]+")
-kedd=$(grep -i 'Ke[_]dd' bridges.txt.hocr | egrep -o "bbox.*; baseline" | egrep -o "[0-9 ]+")
-szerda=$(grep -i 'erda' bridges.txt.hocr | egrep -o "bbox.*; baseline" | egrep -o "[0-9 ]+")
-csutortok=$(grep -i 'Cs[uüű]t[oöő]rt[oöő]k' bridges.txt.hocr | egrep -o "bbox.*; baseline" | egrep -o "[0-9 ]+")
-pentek=$(grep -i 'P[eé]ntek' bridges.txt.hocr | egrep -o "bbox.*; baseline" | egrep -o "[0-9 ]+")
+hetfo=$(grep -i 'H[ée]tf[oőö]' "${outfolder}bridges.txt.hocr" | egrep -o "bbox.*; baseline" | egrep -o "[0-9 ]+")
+kedd=$(grep -i 'Ke[_]?dd' "${outfolder}bridges.txt.hocr" | egrep -o "bbox.*; baseline" | egrep -o "[0-9 ]+")
+szerda=$(grep -i 'erda' "${outfolder}bridges.txt.hocr" | egrep -o "bbox.*; baseline" | egrep -o "[0-9 ]+")
+csutortok=$(grep -i 'Cs[uüű]t[oöő]rt[oöő]k' "${outfolder}bridges.txt.hocr" | egrep -o "bbox.*; baseline" | egrep -o "[0-9 ]+")
+pentek=$(grep -i 'P[eé]ntek' "${outfolder}bridges.txt.hocr" | egrep -o "bbox.*; baseline" | egrep -o "[0-9 ]+")
 
 getDailyMenu "$hetfo" "$kedd" "+0"
 getDailyMenu "$kedd" "$szerda" "+1"
