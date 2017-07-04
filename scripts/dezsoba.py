@@ -10,10 +10,9 @@ import os.path
 target_folder = "/var/www/html/ebedmenu"
 
 def write(doc, pattern, dayoffset):
-	print("Finding " + pattern)
 	el = doc.xpath('.//h4[text()="' + pattern + '"]/..//div[@class="sppb-menu-text"]')
 	text = etree.tostring(el[0],encoding='unicode', method="xml")
-	menu = text.replace("<div class=\"sppb-menu-text\">","").replace("</div>","").replace("</p>","").replace('<p class="p1">',"").replace("<br/>","\n")
+	menu = text.replace("<div class=\"sppb-menu-text\">","").replace("</div>","").replace("</p>","").replace('<p class="p1">',"").replace("<br/>","\n").replace('<div dir="auto">',"")
 	
 	day = datetime.datetime.today() + timedelta(days=dayoffset)
 	filename = target_folder + "/dezsoba_" + day.strftime("%Y-%m-%d") + ".txt"

@@ -45,7 +45,7 @@ fi
 }
 
 hetfo=$(grep -i 'H[ée]tf[oőö]' "${outfolder}bridges.txt.hocr" | egrep -o "bbox.*; baseline" | egrep -o "[0-9 ]+")
-kedd=$(grep -i 'Ke[_]?dd' "${outfolder}bridges.txt.hocr" | egrep -o "bbox.*; baseline" | egrep -o "[0-9 ]+")
+kedd=$(grep -i 'Kedd' "${outfolder}bridges.txt.hocr" | egrep -o "bbox.*; baseline" | egrep -o "[0-9 ]+")
 szerda=$(grep -i 'erda' "${outfolder}bridges.txt.hocr" | egrep -o "bbox.*; baseline" | egrep -o "[0-9 ]+")
 csutortok=$(grep -i 'Cs[uüű]t[oöő]rt[oöő]k' "${outfolder}bridges.txt.hocr" | egrep -o "bbox.*; baseline" | egrep -o "[0-9 ]+")
 pentek=$(grep -i 'P[eé]ntek' "${outfolder}bridges.txt.hocr" | egrep -o "bbox.*; baseline" | egrep -o "[0-9 ]+")

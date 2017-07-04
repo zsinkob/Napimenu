@@ -3,17 +3,17 @@ import os.path
 
 import facebook
 
-access_token = ''
+access_token = '582813855245984|_Rssln5VgoP05inf_FgincK4iy4'
 
 target_folder = "/var/www/html/ebedmenu/"
 
 user = 'KompotBisztro'
 
 def isMenuLine(line):
-    if line.find("leves") > 0 or line.startswith("A:") or line.startswith("B:"):
-        return True
-    else:
+    if (line.find("menü") > 0) or (line.find("étvágy") > 0) or (line.find("esszert") > 0):
         return False
+    else:
+        return True
 
 def writeMenu(message, filename):
     print("Writing" + filename)

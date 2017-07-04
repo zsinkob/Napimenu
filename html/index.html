@@ -19,7 +19,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Napi men�">
+    <meta name="description" content="Napi menü">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <title>Ebéd menü</title>
 
@@ -30,7 +30,7 @@
     <!-- Add to homescreen for Safari on iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Napi men�">
+    <meta name="apple-mobile-web-app-title" content="Napi menü">
     <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
 
     <!-- Tile icon for Win8 (144x144 + tile color) -->
@@ -91,14 +91,14 @@
       <main class="mdl-layout__content">
         <div class="mdl-layout__tab-panel is-active" id="overview">
           
-          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+		  
+		  <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
             <div class="mdl-card mdl-small-card mdl-cell mdl-cell--12-col">
               <div class="mdl-card__supporting-text">
-
-		<a href="https://www.facebook.com/KompotBisztro/" style="text-decoration:none; color: #616161 !important;">
-			<h4>Kompót</h4>
+                <a href="https://www.facebook.com/BridgesFoodBar/" style="text-decoration:none; color: #616161 !important;">
+			<h4>Bridges</h4>
 		</a>
-                <div class="dailymenu" id="kompot"></div>
+                <img style="max-width: 100%;" id="bridges"></img>
               </div>
             </div>
           </section>
@@ -117,18 +117,30 @@
 		  <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
             <div class="mdl-card mdl-small-card mdl-cell mdl-cell--12-col">
               <div class="mdl-card__supporting-text">
-                <a href="https://www.facebook.com/BridgesFoodBar/" style="text-decoration:none; color: #616161 !important;">
-			<h4>Bridges</h4>
+		<a href="https://www.facebook.com/greenhousegrillferencvaros/" style="text-decoration:none; color: #616161 !important;">
+			<h4>Green House Grill Corvin</h4>
 		</a>
-                <img style="max-width: 100%;" id="bridges"></img>
+                <div class="dailymenu" id="greenhouse"></div>
               </div>
             </div>
-          </section>
+          </section>		  
+		  
+          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <div class="mdl-card mdl-small-card mdl-cell mdl-cell--12-col">
+              <div class="mdl-card__supporting-text">
+		<a href="https://www.facebook.com/KompotBisztro/" style="text-decoration:none; color: #616161 !important;">
+			<h4>Kompót</h4>
+		</a>
+                <div class="dailymenu" id="kompot"></div>
+              </div>
+            </div>
+          </section>		  
+
 	<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
             <div class="mdl-card mdl-small-card mdl-cell mdl-cell--12-col">
               <div class="mdl-card__supporting-text">
                 <a href="http://dezsoba.hu/hu/heti-menue" style="text-decoration:none; color: #616161 !important;">
-			<h4>Dezső-Bá</h4>
+			<h4>Dezsőbá</h4>
 		</a>
                 <div class="dailymenu" id="dezso"></div>
               </div>
@@ -179,9 +191,10 @@ function process(date) {
 	var today = formatDate(date);
 	$('#selecteddate').text(today);
  	processText("kompot",today,'#kompot');
-    	processText("foodie",today,'#foodie');
+    processText("foodie",today,'#foodie');
 	processText("stex",today,'#stex');
 	processText("dezsoba",today,'#dezso');
+	processText("greenhouse",today,'#greenhouse');
 
 
 
