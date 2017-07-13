@@ -147,7 +147,16 @@
             </div>
           </section>
 
-		  
+		 
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <div class="mdl-card mdl-small-card mdl-cell mdl-cell--12-col">              <div class="mdl-card__supporting-text">
+                <a href="http://10minutes.hu/" style="text-decoration:none; color: #616161 !important;">
+                        <h4>10 minutes</h4>
+                </a>
+                <div class="dailymenu" id="tenminutes"></div>
+              </div>
+            </div>
+          </section> 
 	<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
             <div class="mdl-card mdl-small-card mdl-cell mdl-cell--12-col">
               <div class="mdl-card__supporting-text">
@@ -158,6 +167,27 @@
               </div>
             </div>
           </section>
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = 'http://napimenu.dedyn.io';  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = 'napimenu'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://napimenu.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            
         </div>
    
         <footer class="mdl-mega-footer">
@@ -194,6 +224,7 @@ function process(date) {
     processText("foodie",today,'#foodie');
 	processText("stex",today,'#stex');
 	processText("dezsoba",today,'#dezso');
+processText("10minutes",today,'#tenminutes');
 	processText("greenhouse",today,'#greenhouse');
 
 
