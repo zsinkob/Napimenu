@@ -14,9 +14,9 @@ def write(doc, pattern, dayoffset):
 	text = etree.tostring(el[0],encoding='unicode', method="xml")
 	menu = text.replace("<div class=\"sppb-menu-text\">","").replace("</div>","").replace("</p>","").replace('<p class="p1">',"").replace("<br/>","\n").replace('<div dir="auto">',"")
 	
-	day = datetime.datetime.today() + timedelta(days=dayoffset)
+	day = datetime.datetime.today() + timedelta(days=dayoffset) - datetime.timedelta(days=datetime.datetime.today().weekday())
 	filename = target_folder + "/dezsoba_" + day.strftime("%Y-%m-%d") + ".txt"
-	
+	print("Saving" + filename)	
 	with codecs.open(filename, 'w', encoding='utf8') as f:
 		f.write(menu)
 
