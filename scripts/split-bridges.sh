@@ -16,7 +16,7 @@ current=$1
 next=$2
 index=$3
 #date=$(date -d "+${index} days" +%Y-%m-%d)
-date=$(date -d "-$(($(date +%w)-${index})) days" +%Y-%m-%d)
+date=$(date -d "+$((${index}-$(date +%w))) days" +%Y-%m-%d)
 echo "Saving to ${outfolder}bridges_$date.jpg"
 if [[ -z $current ]]; then
 	echo "cannot find ${current} offset ${3}"
@@ -55,8 +55,8 @@ szerda=$(grep -i 'erda' "${outfolder}bridges.txt.hocr" | egrep -o "bbox.*; basel
 csutortok=$(grep -i 'Cs[uüű]t[oöő]rt[oöő]k' "${outfolder}bridges.txt.hocr" | egrep -o "bbox.*; baseline" | egrep -o "[0-9 ]+")
 pentek=$(grep -i 'P[eé]ntek' "${outfolder}bridges.txt.hocr" | egrep -o "bbox.*; baseline" | egrep -o "[0-9 ]+")
 
-getDailyMenu "$hetfo" "$kedd" "+1"
-getDailyMenu "$kedd" "$szerda" "+2"
-getDailyMenu "$szerda" "$csutortok" "+3"
-getDailyMenu "$csutortok" "$pentek" "+4"
-getDailyMenu "$pentek" "" "+5"
+getDailyMenu "$hetfo" "$kedd" "1"
+getDailyMenu "$kedd" "$szerda" "2"
+getDailyMenu "$szerda" "$csutortok" "3"
+getDailyMenu "$csutortok" "$pentek" "4"
+getDailyMenu "$pentek" "" "5"

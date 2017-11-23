@@ -1,12 +1,12 @@
 import facebook
 import urllib.request
 import subprocess
+import config
 
-access_token = '582813855245984|_Rssln5VgoP05inf_FgincK4iy4'
 user = '1055195294541029'
 outfile = "/var/www/html/ebedmenu/bridges.jpg"
 
-graph = facebook.GraphAPI(access_token)
+graph = facebook.GraphAPI(config.FB_ACCESS_TOKEN)
 profile = graph.get_object(user)
 posts = graph.get_connections(profile['id'], 'posts')
 

@@ -23,16 +23,18 @@
 # For more information see the manual pages of crontab(5) and cron(8)
 # 
 # m h  dom mon dow   command
-30 8 * * * python3 /home/pi/KompotDownloader.py >> /home/pi/kompot.log
-0 10 * * * python3 /home/pi/KompotDownloader.py >> /home/pi/kompot.log
-0 10 * * * python3 /home/pi/FoodieDownloader.py >> /home/pi/foodie.log
-30 10 * * * python3 /home/pi/FoodieDownloader.py >> /home/pi/foodie.log
-0 11 * * * python3 /home/pi/FoodieDownloader.py >> /home/pi/foodie.log
-15 11 * * * python3 /home/pi/GreenhouseDownloader.py >> /home/pi/greenhouse.log
-30 11 * * * python3 /home/pi/GreenhouseDownloader.py >> /home/pi/greenhouse.log
-45 11 * * * python3 /home/pi/GreenhouseDownloader.py >> /home/pi/greenhouse.log
-59 11 * * * python3 /home/pi/GreenhouseDownloader.py >> /home/pi/greenhouse.log
-10 12 * * * python3 /home/pi/GreenhouseDownloader.py >> /home/pi/greenhouse.log
-30 10 * * 1 python3 /home/pi/dezsoba.py >> /home/pi/dezsoba.log
-30 10 * * 1 /home/pi/split-stex.sh >> /home/pi/splitstex.log
-30 10 * * * /home/pi/split-10minutes.sh >> /home/pi/split10minutes.log
+30 8 * * * python3 /home/pi/napimenu/scripts/KompotDownloader.py >> /home/pi/log/kompot.log
+0 10 * * * python3 /home/pi/napimenu/scripts/KompotDownloader.py >> /home/pi/log/kompot.log
+0 10 * * * python3 /home/pi/napimenu/scripts/FoodieDownloader.py >> /home/pi/log/foodie.log
+30 10 * * * python3 /home/pi/napimenu/scripts/FoodieDownloader.py >> /home/pi/log/foodie.log
+0 11 * * * python3 /home/pi/napimenu/scripts/FoodieDownloader.py >> /home/pi/log/foodie.log
+15 11 * * * python3 /home/pi/napimenu/scripts/GreenhouseDownloader.py >> /home/pi/log/greenhouse.log
+30 11 * * * python3 /home/pi/napimenu/scripts/GreenhouseDownloader.py >> /home/pi/log/greenhouse.log
+45 11 * * * python3 /home/pi/napimenu/scripts/GreenhouseDownloader.py >> /home/pi/log/greenhouse.log
+59 11 * * * python3 /home/pi/napimenu/scripts/GreenhouseDownloader.py >> /home/pi/log/greenhouse.log
+10 12 * * * python3 /home/pi/napimenu/scripts/GreenhouseDownloader.py >> /home/pi/log/greenhouse.log
+30 10 * * 1 python3 /home/pi/napimenu/scripts/dezsoba.py >> /home/pi/log/dezsoba.log
+30 11 * * 1 python3 /home/pi/napimenu/scripts/dezsoba.py >> /home/pi/log/dezsoba.log
+30 10 * * 1 python3 /home/pi/napimenu/scripts/GiliceDownloader.py >> /home/pi/log/gilice.log
+30 10 * * 1 /home/pi/split-stex.sh >> /home/pi/log/splitstex.log
+30 10 * * * /home/pi/split-10minutes.sh >> /home/pi/log/split10minutes.log

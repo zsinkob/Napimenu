@@ -1,9 +1,9 @@
 import codecs
 import os.path
+from datetime import timedelta, datetime
 
 import facebook
-
-access_token = '582813855245984|_Rssln5VgoP05inf_FgincK4iy4'
+import config
 
 target_folder = "/var/www/html/ebedmenu/"
 
@@ -24,7 +24,7 @@ def writeMenu(message, filename):
                 f.write(line + "\n")
 
 
-graph = facebook.GraphAPI(access_token)
+graph = facebook.GraphAPI(config.FB_ACCESS_TOKEN)
 profile = graph.get_object(user)
 posts = graph.get_connections(profile['id'], 'posts')
 i = 0
